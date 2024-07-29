@@ -1,4 +1,4 @@
-﻿caseID,activityID,eventID,timestamp,resourceID
+﻿caseID,activityID,eventID,timestamp,resourceID, processID
 case_0,activity_A,event_0,2016-01-01 09:00:00.000000+00:00,user_1
 case_0,activity_A,event_1,2016-01-01 09:15:00.000000+00:00,user_1
 case_0,activity_C,event_2,2016-01-01 09:35:00.000000+00:00,user_1
