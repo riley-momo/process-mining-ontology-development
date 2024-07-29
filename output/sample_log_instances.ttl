@@ -1,0 +1,83 @@
+@prefix ns1: <https://stl.mie.utoronto.ca/ontologies/spm/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.example.com/event_0> a ns1:Event ;
+    ns1:hasActivity <http://www.example.com/activity_A> ;
+    ns1:hasCase <http://www.example.com/case_0> ;
+    ns1:hasRecordedTime "2016-01-01 09:00:00.000000+00:00"^^xsd:dateTimeStamp ;
+    ns1:hasResource <http://www.example.com/user_1> .
+
+<http://www.example.com/event_1> a ns1:Event ;
+    ns1:hasActivity <http://www.example.com/activity_A> ;
+    ns1:hasCase <http://www.example.com/case_0> ;
+    ns1:hasRecordedTime "2016-01-01 09:15:00.000000+00:00"^^xsd:dateTimeStamp ;
+    ns1:hasResource <http://www.example.com/user_1> .
+
+<http://www.example.com/event_2> a ns1:Event ;
+    ns1:hasActivity <http://www.example.com/activity_C> ;
+    ns1:hasCase <http://www.example.com/case_0> ;
+    ns1:hasRecordedTime "2016-01-01 09:35:00.000000+00:00"^^xsd:dateTimeStamp ;
+    ns1:hasResource <http://www.example.com/user_1> .
+
+<http://www.example.com/event_3> a ns1:Event ;
+    ns1:hasActivity <http://www.example.com/activity_A> ;
+    ns1:hasCase <http://www.example.com/case_1> ;
+    ns1:hasRecordedTime "2016-01-02 09:00:00.000000+00:00"^^xsd:dateTimeStamp ;
+    ns1:hasResource <http://www.example.com/user_1> .
+
+<http://www.example.com/event_4> a ns1:Event ;
+    ns1:hasActivity <http://www.example.com/activity_B> ;
+    ns1:hasCase <http://www.example.com/case_1> ;
+    ns1:hasRecordedTime "2016-01-02 09:00:00.000000+00:00"^^xsd:dateTimeStamp ;
+    ns1:hasResource <http://www.example.com/user_0> .
+
+<http://www.example.com/event_5> a ns1:Event ;
+    ns1:hasActivity <http://www.example.com/activity_C> ;
+    ns1:hasCase <http://www.example.com/case_1> ;
+    ns1:hasRecordedTime "2016-01-03 09:00:00.000000+00:00"^^xsd:dateTimeStamp ;
+    ns1:hasResource <http://www.example.com/user_0> .
+
+<http://www.example.com/event_6> a ns1:Event ;
+    ns1:hasActivity <http://www.example.com/activity_A> ;
+    ns1:hasCase <http://www.example.com/case_2> ;
+    ns1:hasRecordedTime "2016-01-01 09:00:00.000000+00:00"^^xsd:dateTimeStamp ;
+    ns1:hasResource <http://www.example.com/user_1> .
+
+<http://www.example.com/event_7> a ns1:Event ;
+    ns1:hasActivity <http://www.example.com/activity_B> ;
+    ns1:hasCase <http://www.example.com/case_2> ;
+    ns1:hasRecordedTime "2016-01-01 09:10:00.000000+00:00"^^xsd:dateTimeStamp ;
+    ns1:hasResource <http://www.example.com/user_1> .
+
+<http://www.example.com/event_8> a ns1:Event ;
+    ns1:hasActivity <http://www.example.com/activity_C> ;
+    ns1:hasCase <http://www.example.com/case_2> ;
+    ns1:hasRecordedTime "2016-01-01 09:15:00.000000+00:00"^^xsd:dateTimeStamp ;
+    ns1:hasResource <http://www.example.com/user_2> .
+
+<http://www.example.com/event_9> a ns1:Event ;
+    ns1:hasActivity <http://www.example.com/activity_D> ;
+    ns1:hasCase <http://www.example.com/case_2> ;
+    ns1:hasRecordedTime "2017-01-06 10:35:00.000000+00:00"^^xsd:dateTimeStamp ;
+    ns1:hasResource <http://www.example.com/user_1> .
+
+<http://www.example.com/activity_D> a ns1:Activity .
+
+<http://www.example.com/user_2> a ns1:Resource .
+
+<http://www.example.com/activity_B> a ns1:Activity .
+
+<http://www.example.com/user_0> a ns1:Resource .
+
+<http://www.example.com/activity_C> a ns1:Activity .
+
+<http://www.example.com/case_0> a ns1:Case .
+
+<http://www.example.com/case_1> a ns1:Case .
+
+<http://www.example.com/activity_A> a ns1:Activity .
+
+<http://www.example.com/case_2> a ns1:Case .
+
+<http://www.example.com/user_1> a ns1:Resource .
+
