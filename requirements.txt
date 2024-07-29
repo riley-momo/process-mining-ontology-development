@@ -1,3 +1,5 @@
+ipykernel
+jupyterlab
 pm4py
 kglab
 yatter
