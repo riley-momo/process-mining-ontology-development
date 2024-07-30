@@ -1,0 +1,76 @@
+Resource(Ruser_1).
+Resource(Ruser_2).
+Resource(Ruser_0).
+Event(Eevent_3).
+Event(Eevent_8).
+Event(Eevent_2).
+Event(Eevent_4).
+Event(Eevent_7).
+Event(Eevent_1).
+Event(Eevent_9).
+Event(Eevent_5).
+Event(Eevent_0).
+Event(Eevent_6).
+Case(Ccase_2).
+Case(Ccase_1).
+Case(Ccase_0).
+Activity(Aactivity_B).
+Activity(Aactivity_A).
+Activity(Aactivity_D).
+Activity(Aactivity_C).
+hasActivity(Eevent_6, Aactivity_A).
+hasActivity(Eevent_9, Aactivity_D).
+hasCase(Eevent_7, Ccase_2).
+hasActivity(Eevent_0, Aactivity_A).
+hasResource(Eevent_6, Ruser_1).
+hasCase(Eevent_1, Ccase_0).
+hasResource(Eevent_0, Ruser_1).
+hasResource(Eevent_2, Ruser_1).
+hasCase(Eevent_3, Ccase_1).
+hasActivity(Eevent_5, Aactivity_C).
+hasCase(Eevent_5, Ccase_1).
+hasProcess(Ccase_2, P1).
+hasActivity(Eevent_7, Aactivity_B).
+hasProcess(Ccase_1, P1).
+hasResource(Eevent_9, Ruser_1).
+hasCase(Eevent_4, Ccase_1).
+hasResource(Eevent_1, Ruser_1).
+hasCase(Eevent_6, Ccase_2).
+hasActivity(Eevent_1, Aactivity_A).
+hasActivity(Eevent_3, Aactivity_A).
+hasResource(Eevent_7, Ruser_1).
+hasResource(Eevent_5, Ruser_0).
+hasCase(Eevent_8, Ccase_2).
+hasCase(Eevent_2, Ccase_0).
+hasCase(Eevent_9, Ccase_2).
+hasResource(Eevent_3, Ruser_1).
+hasActivity(Eevent_2, Aactivity_C).
+hasActivity(Eevent_4, Aactivity_B).
+hasCase(Eevent_0, Ccase_0).
+hasActivity(Eevent_8, Aactivity_C).
+hasResource(Eevent_4, Ruser_0).
+hasResource(Eevent_8, Ruser_2).
+hasProcess(Ccase_0, P1).
+timepoint(ts_0).
+timepoint(ts_1).
+timepoint(ts_2).
+timepoint(ts_3).
+timepoint(ts_4).
+timepoint(ts_5).
+timepoint(ts_6).
+hasRecordedTime(Eevent_8, ts_2).
+hasRecordedTime(Eevent_1, ts_2).
+hasRecordedTime(Eevent_0, ts_0).
+hasRecordedTime(Eevent_6, ts_0).
+hasRecordedTime(Eevent_7, ts_1).
+hasRecordedTime(Eevent_5, ts_5).
+hasRecordedTime(Eevent_3, ts_4).
+hasRecordedTime(Eevent_4, ts_4).
+hasRecordedTime(Eevent_2, ts_3).
+hasRecordedTime(Eevent_9, ts_6).
+before(ts_0,ts_1).
+before(ts_1,ts_2).
+before(ts_2,ts_3).
+before(ts_3,ts_4).
+before(ts_4,ts_5).
+before(ts_5,ts_6).
