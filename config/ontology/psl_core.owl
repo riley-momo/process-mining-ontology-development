@@ -1,0 +1,416 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ontohub.org/psl/psl_core"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ontohub.org/psl/psl_core">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Activity_Occurrence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OccurrenceOrObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Timepoint"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#before"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#beforeEq"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#begins"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ends"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#exists_at"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_occurring_at"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#occurrence_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#participates"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Activity_Occurrence"/>
+        <Class IRI="#OccurrenceOrObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Activity_Occurrence"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#begins"/>
+            <Class IRI="#Timepoint"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Activity_Occurrence"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ends"/>
+            <Class IRI="#Timepoint"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Activity_Occurrence"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#occurrence_of"/>
+            <Class IRI="#Activity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <Class IRI="#OccurrenceOrObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#begins"/>
+            <Class IRI="#Timepoint"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ends"/>
+            <Class IRI="#Timepoint"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OccurrenceOrObject"/>
+        <Class IRI="http://ontohub.org/psl/interval_psl_core#OccurrenceOrObjectOrInterval"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://ontohub.org/psl/interval_psl_core#OccurrenceOrObjectOrInterval"/>
+        <Class IRI="#Activity"/>
+        <Class IRI="#Timepoint"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Activity_Occurrence"/>
+        <Class IRI="#Object"/>
+    </DisjointClasses>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#begins"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#ends"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#occurrence_of"/>
+    </FunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#before"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#before"/>
+        <Class IRI="#Timepoint"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#beforeEq"/>
+        <Class IRI="#Timepoint"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#begins"/>
+        <Class IRI="http://ontohub.org/psl/interval_psl_core#OccurrenceOrObjectOrInterval"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ends"/>
+        <Class IRI="http://ontohub.org/psl/interval_psl_core#OccurrenceOrObjectOrInterval"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#exists_at"/>
+        <Class IRI="#OccurrenceOrObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_occurring_at"/>
+        <Class IRI="#Activity_Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#occurrence_of"/>
+        <Class IRI="#Activity_Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#participates"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#before"/>
+        <Class IRI="#Timepoint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#beforeEq"/>
+        <Class IRI="#Timepoint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#begins"/>
+        <Class IRI="#Timepoint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ends"/>
+        <Class IRI="#Timepoint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#exists_at"/>
+        <Class IRI="#Timepoint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_occurring_at"/>
+        <Class IRI="#Timepoint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#occurrence_of"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#participates"/>
+        <Class IRI="#Activity_Occurrence"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#begins"/>
+            </ObjectInverseOf>
+            <ObjectProperty IRI="#exists_at"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#beforeEq"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#begins"/>
+            </ObjectInverseOf>
+            <ObjectProperty IRI="#is_occurring_at"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#beforeEq"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#exists_at"/>
+            </ObjectInverseOf>
+            <ObjectProperty IRI="#ends"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#beforeEq"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#is_occurring_at"/>
+            </ObjectInverseOf>
+            <ObjectProperty IRI="#ends"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#beforeEq"/>
+    </SubObjectPropertyOf>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>http://ontohub.org/psl/interval_psl_core#OccurrenceOrObjectOrInterval</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">OccurrenceOrObjectOrIntervals</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>http://ontohub.org/psl/interval_psl_core#OccurrenceOrObjectOrInterval</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">OccurrenceOrObjectOrInterval</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#Activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#Activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#Activity_Occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity_Occurrences</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#Activity_Occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity_Occurrence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#Object</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Objects</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#Object</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#OccurrenceOrObject</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">OccurrenceOrObjects</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#OccurrenceOrObject</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">OccurrenceOrObject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#Timepoint</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Timepoints</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#Timepoint</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Timepoint</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#before</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">before</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#before</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">befores</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#before</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">befored</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#beforeEq</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">beforeEq</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#beforeEq</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">beforeEqs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#beforeEq</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">beforeEqed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#begins</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">begins</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#begins</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">beginss</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#begins</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">beginsed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#ends</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ends</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#ends</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">endss</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#ends</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">endsed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#exists_at</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">exists_at</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#exists_at</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">existses_at</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#exists_at</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">existsed_at</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#is_occurring_at</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">is_occurring_at</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#is_occurring_at</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">is_occurrings_at</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#is_occurring_at</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">is_occurrung_at</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#occurrence_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">occurrence_of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#occurrence_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">occurrence_ofs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#occurrence_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">occurrence_ofed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#participates</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">participates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#participates</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">participateses</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#participates</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">participatesed</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
+

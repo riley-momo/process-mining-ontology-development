@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ontohub.org/psl/psl_owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ontohub.org/psl/psl_owl">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://ontohub.org/psl/complex_actocc</Import>
+    <Import>http://ontohub.org/psl/interval_psl_core</Import>
+    <Declaration>
+        <ObjectProperty IRI="#activity_precedes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#activity_precedes_occ"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#in_precedes_subocc_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#subocc_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#superocc_activity"/>
+    </Declaration>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="http://ontohub.org/psl/complex_actocc#subactivity_occurrence"/>
+            <ObjectProperty IRI="http://ontohub.org/psl/psl_core#occurrence_of"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#subocc_of"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="http://ontohub.org/psl/occtree#precedes"/>
+            </ObjectInverseOf>
+            <ObjectProperty IRI="#subocc_of"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#in_precedes_subocc_of"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="http://ontohub.org/psl/psl_core#occurrence_of"/>
+            </ObjectInverseOf>
+            <ObjectProperty IRI="http://ontohub.org/psl/occtree#precedes"/>
+            <ObjectProperty IRI="http://ontohub.org/psl/psl_core#occurrence_of"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#activity_precedes"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#subocc_of"/>
+            </ObjectInverseOf>
+            <ObjectProperty IRI="http://ontohub.org/psl/psl_core#occurrence_of"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#superocc_activity"/>
+    </SubObjectPropertyOf>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>http://ontohub.org/psl/complex_actocc#subactivity_occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subactivity_occurrence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>http://ontohub.org/psl/complex_actocc#subactivity_occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subactivity_occurrences</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>http://ontohub.org/psl/complex_actocc#subactivity_occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subactivity_occurrenced</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>http://ontohub.org/psl/occtree#precedes</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">precedes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>http://ontohub.org/psl/occtree#precedes</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">precedeses</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>http://ontohub.org/psl/occtree#precedes</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">precedesed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity_Occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity_Occurrences</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity_Occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity_Occurrence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>http://ontohub.org/psl/psl_core#occurrence_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">occurrence_of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>http://ontohub.org/psl/psl_core#occurrence_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">occurrence_ofs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>http://ontohub.org/psl/psl_core#occurrence_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">occurrence_ofed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#activity_precedes</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">activity_precedes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#activity_precedes</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">activity_precedeses</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#activity_precedes</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">activity_precedesed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#activity_precedes_occ</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">activity_precedes_occ</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#activity_precedes_occ</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">activity_precedes_occs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#activity_precedes_occ</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">activity_precedes_occed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#in_precedes_subocc_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">in_precedes_subocc_of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#in_precedes_subocc_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">in_precedes_subocc_ofs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#in_precedes_subocc_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">in_precedes_subocc_ofed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#subocc_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subocc_of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#subocc_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subocc_ofs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#subocc_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subocc_ofed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#superocc_activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">superocc_activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#superocc_activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">superocc_activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#superocc_activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">superocc_activitied</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>http://ontohub.org/psl/subactivity#subactivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subactivity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>http://ontohub.org/psl/subactivity#subactivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subactivities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>http://ontohub.org/psl/subactivity#subactivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subactivitied</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

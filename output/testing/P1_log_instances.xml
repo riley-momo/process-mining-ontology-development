@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="https://stl.mie.utoronto.ca/ontologies/spm/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://example.com/C_case_2">
+    <ns1:hasProcess rdf:resource="http://example.com/P1"/>
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Case"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/A_activity_B">
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/E_event_1">
+    <ns1:hasCase rdf:resource="http://example.com/C_case_0"/>
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Event"/>
+    <ns1:hasActivity rdf:resource="http://example.com/A_activity_A"/>
+    <ns1:hasResource rdf:resource="http://example.com/R_user_1"/>
+    <ns1:hasRecordedTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2016-01-01 09:15:00.000000+00:00</ns1:hasRecordedTime>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/E_event_2">
+    <ns1:hasRecordedTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2016-01-01 09:35:00.000000+00:00</ns1:hasRecordedTime>
+    <ns1:hasActivity rdf:resource="http://example.com/A_activity_C"/>
+    <ns1:hasResource rdf:resource="http://example.com/R_user_1"/>
+    <ns1:hasCase rdf:resource="http://example.com/C_case_0"/>
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/E_event_4">
+    <ns1:hasResource rdf:resource="http://example.com/R_user_0"/>
+    <ns1:hasCase rdf:resource="http://example.com/C_case_1"/>
+    <ns1:hasRecordedTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2016-01-02 09:00:00.000000+00:00</ns1:hasRecordedTime>
+    <ns1:hasActivity rdf:resource="http://example.com/A_activity_B"/>
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/E_event_9">
+    <ns1:hasActivity rdf:resource="http://example.com/A_activity_D"/>
+    <ns1:hasRecordedTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2017-01-06 10:35:00.000000+00:00</ns1:hasRecordedTime>
+    <ns1:hasCase rdf:resource="http://example.com/C_case_2"/>
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Event"/>
+    <ns1:hasResource rdf:resource="http://example.com/R_user_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/R_user_2">
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Resource"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/E_event_5">
+    <ns1:hasRecordedTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2016-01-03 09:00:00.000000+00:00</ns1:hasRecordedTime>
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Event"/>
+    <ns1:hasActivity rdf:resource="http://example.com/A_activity_C"/>
+    <ns1:hasCase rdf:resource="http://example.com/C_case_1"/>
+    <ns1:hasResource rdf:resource="http://example.com/R_user_0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/C_case_1">
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Case"/>
+    <ns1:hasProcess rdf:resource="http://example.com/P1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/E_event_0">
+    <ns1:hasResource rdf:resource="http://example.com/R_user_1"/>
+    <ns1:hasActivity rdf:resource="http://example.com/A_activity_A"/>
+    <ns1:hasCase rdf:resource="http://example.com/C_case_0"/>
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Event"/>
+    <ns1:hasRecordedTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2016-01-01 09:00:00.000000+00:00</ns1:hasRecordedTime>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/E_event_3">
+    <ns1:hasActivity rdf:resource="http://example.com/A_activity_A"/>
+    <ns1:hasRecordedTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2016-01-02 09:00:00.000000+00:00</ns1:hasRecordedTime>
+    <ns1:hasCase rdf:resource="http://example.com/C_case_1"/>
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Event"/>
+    <ns1:hasResource rdf:resource="http://example.com/R_user_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/E_event_6">
+    <ns1:hasResource rdf:resource="http://example.com/R_user_1"/>
+    <ns1:hasActivity rdf:resource="http://example.com/A_activity_A"/>
+    <ns1:hasRecordedTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2016-01-01 09:00:00.000000+00:00</ns1:hasRecordedTime>
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Event"/>
+    <ns1:hasCase rdf:resource="http://example.com/C_case_2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/E_event_7">
+    <ns1:hasActivity rdf:resource="http://example.com/A_activity_B"/>
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Event"/>
+    <ns1:hasRecordedTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2016-01-01 09:10:00.000000+00:00</ns1:hasRecordedTime>
+    <ns1:hasCase rdf:resource="http://example.com/C_case_2"/>
+    <ns1:hasResource rdf:resource="http://example.com/R_user_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/E_event_8">
+    <ns1:hasRecordedTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2016-01-01 09:15:00.000000+00:00</ns1:hasRecordedTime>
+    <ns1:hasCase rdf:resource="http://example.com/C_case_2"/>
+    <ns1:hasActivity rdf:resource="http://example.com/A_activity_C"/>
+    <ns1:hasResource rdf:resource="http://example.com/R_user_2"/>
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/R_user_0">
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Resource"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/C_case_0">
+    <ns1:hasProcess rdf:resource="http://example.com/P1"/>
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Case"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/A_activity_A">
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/A_activity_D">
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/A_activity_C">
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.com/R_user_1">
+    <rdf:type rdf:resource="https://stl.mie.utoronto.ca/ontologies/spm/Resource"/>
+  </rdf:Description>
+</rdf:RDF>

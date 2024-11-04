@@ -1,0 +1,415 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ontohub.org/psl/complex_actocc"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ontohub.org/psl/complex_actocc">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://ontohub.org/psl/atomic</Import>
+    <Declaration>
+        <Class IRI="#ArborealSubocc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LegalSubocc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MinimalSubocc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonArboreal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#atocc"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#leaf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#leaf_occ"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#proper_subactivity_occurrence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#root"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#root_occ"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#subactivity_occurrence"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#ArborealSubocc"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://ontohub.org/psl/occtree#Arboreal"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#subactivity_occurrence"/>
+                <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LegalSubocc"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#subactivity_occurrence"/>
+            <Class IRI="http://ontohub.org/psl/occtree#Legal"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MinimalSubocc"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#proper_subactivity_occurrence"/>
+                    <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NonArboreal"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+            <ObjectComplementOf>
+                <Class IRI="http://ontohub.org/psl/occtree#Arboreal"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://ontohub.org/psl/occtree#Legal"/>
+        <Class IRI="#MinimalSubocc"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ontohub.org/psl/occtree#Legal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#root"/>
+            <Class IRI="http://ontohub.org/psl/psl_core#Activity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArborealSubocc"/>
+        <Class IRI="http://ontohub.org/psl/occtree#Legal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LegalSubocc"/>
+        <Class IRI="http://ontohub.org/psl/occtree#Legal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MinimalSubocc"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonArboreal"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonArboreal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#root_occ"/>
+            </ObjectInverseOf>
+            <Class IRI="http://ontohub.org/psl/occtree#Arboreal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonArboreal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#subactivity_occurrence"/>
+            </ObjectInverseOf>
+            <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#proper_subactivity_occurrence"/>
+        <ObjectProperty IRI="#subactivity_occurrence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#root_occ"/>
+        <ObjectProperty IRI="#subactivity_occurrence"/>
+    </SubObjectPropertyOf>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#root_occ"/>
+    </InverseFunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#subactivity_occurrence"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#atocc"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#leaf"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#leaf_occ"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#root"/>
+        <Class IRI="http://ontohub.org/psl/occtree#Legal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#root_occ"/>
+        <Class IRI="http://ontohub.org/psl/occtree#Legal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#subactivity_occurrence"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#atocc"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#leaf"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#leaf_occ"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#root"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#root_occ"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#subactivity_occurrence"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#root_occ"/>
+            <ObjectProperty IRI="http://ontohub.org/psl/psl_core#occurrence_of"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#root"/>
+    </SubObjectPropertyOf>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity_Occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity_Occurrences</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity_Occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity_Occurrence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>http://ontohub.org/psl/psl_core#occurrence_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">occurrence_of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>http://ontohub.org/psl/psl_core#occurrence_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">occurrence_ofs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>http://ontohub.org/psl/psl_core#occurrence_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">occurrence_ofed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>http://ontohub.org/psl/occtree#Arboreal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Arboreals</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>http://ontohub.org/psl/occtree#Arboreal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Arboreal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>http://ontohub.org/psl/occtree#Legal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Legals</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>http://ontohub.org/psl/occtree#Legal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Legal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#ArborealSubocc</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ArborealSuboccs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#ArborealSubocc</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ArborealSubocc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#LegalSubocc</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">LegalSuboccs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#LegalSubocc</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">LegalSubocc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#MinimalSubocc</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">MinimalSuboccs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#MinimalSubocc</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">MinimalSubocc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#NonArboreal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">NonArboreals</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#NonArboreal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">NonArboreal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#atocc</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">atocc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#atocc</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">atoccs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#atocc</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">atocced</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#leaf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">leaf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#leaf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">leafs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#leaf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">leafed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#leaf_occ</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">leaf_occ</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#leaf_occ</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">leaf_occs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#leaf_occ</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">leaf_occed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#proper_subactivity_occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">proper_subactivity_occurrence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#proper_subactivity_occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">proper_subactivity_occurrences</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#proper_subactivity_occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">proper_subactivity_occurrenced</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#root</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">root</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#root</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">roots</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#root</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">rooted</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#root_occ</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">root_occ</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#root_occ</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">root_occs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#root_occ</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">root_occed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#subactivity_occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subactivity_occurrence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#subactivity_occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subactivity_occurrences</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#subactivity_occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subactivity_occurrenced</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

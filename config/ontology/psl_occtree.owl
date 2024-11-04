@@ -1,0 +1,433 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ontohub.org/psl/occtree"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ontohub.org/psl/occtree">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://ontohub.org/psl/psl_core</Import>
+    <Declaration>
+        <Class IRI="#Arboreal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Generator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Initial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Legal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NextLegal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonInitial"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#earlier"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#earlierEq"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#next_occ"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#poss"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#precedes"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Initial"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Arboreal"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectInverseOf>
+                        <ObjectProperty IRI="#earlier"/>
+                    </ObjectInverseOf>
+                    <Class IRI="#Arboreal"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NextLegal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#next_occ"/>
+            <Class IRI="#Legal"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NonInitial"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Arboreal"/>
+            <ObjectComplementOf>
+                <Class IRI="#Initial"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Arboreal"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Arboreal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#next_occ"/>
+            <Class IRI="#Arboreal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Arboreal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#earlierEq"/>
+            </ObjectInverseOf>
+            <Class IRI="#Initial"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Arboreal"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://ontohub.org/psl/psl_core#occurrence_of"/>
+            <Class IRI="#Generator"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Generator"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Generator"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="http://ontohub.org/psl/psl_core#occurrence_of"/>
+            </ObjectInverseOf>
+            <Class IRI="#Initial"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Generator"/>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="http://ontohub.org/psl/psl_core#occurrence_of"/>
+            </ObjectInverseOf>
+            <Class IRI="#Arboreal"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Initial"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity_Occurrence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Initial"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://ontohub.org/psl/psl_core#occurrence_of"/>
+            <Class IRI="http://ontohub.org/psl/psl_core#Activity"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Legal"/>
+        <Class IRI="#Arboreal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Legal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#earlier"/>
+            <Class IRI="#Legal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Legal"/>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#earlier"/>
+            </ObjectInverseOf>
+            <Class IRI="#Legal"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NextLegal"/>
+        <Class IRI="#Legal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonInitial"/>
+        <Class IRI="#Arboreal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonInitial"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#earlier"/>
+            </ObjectInverseOf>
+            <Class IRI="#Initial"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonInitial"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#next_occ"/>
+            </ObjectInverseOf>
+            <Class IRI="#Arboreal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#earlier"/>
+        <ObjectProperty IRI="#earlierEq"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#next_occ"/>
+        <ObjectProperty IRI="#earlier"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#precedes"/>
+        <ObjectProperty IRI="#earlier"/>
+    </SubObjectPropertyOf>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#next_occ"/>
+    </InverseFunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#earlier"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#earlierEq"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#precedes"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#earlier"/>
+        <Class IRI="#Arboreal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#earlierEq"/>
+        <Class IRI="#Arboreal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#next_occ"/>
+        <Class IRI="#Arboreal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#poss"/>
+        <Class IRI="#Generator"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#precedes"/>
+        <Class IRI="#Legal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#earlier"/>
+        <Class IRI="#Arboreal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#earlierEq"/>
+        <Class IRI="#Arboreal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#next_occ"/>
+        <Class IRI="#Arboreal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#poss"/>
+        <Class IRI="#Arboreal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#precedes"/>
+        <Class IRI="#Legal"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity_Occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity_Occurrences</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity_Occurrence</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity_Occurrence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>http://ontohub.org/psl/psl_core#occurrence_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">occurrence_of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>http://ontohub.org/psl/psl_core#occurrence_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">occurrence_ofs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>http://ontohub.org/psl/psl_core#occurrence_of</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">occurrence_ofed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#Arboreal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Arboreals</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#Arboreal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Arboreal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#Generator</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Generators</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#Generator</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Generator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#Initial</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Initials</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#Initial</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Initial</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#Legal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Legals</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#Legal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Legal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#NextLegal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">NextLegals</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#NextLegal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">NextLegal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#NonInitial</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">NonInitials</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#NonInitial</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">NonInitial</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#earlier</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">earlier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#earlier</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">earliers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#earlier</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">earliered</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#earlierEq</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">earlierEq</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#earlierEq</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">earlierEqs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#earlierEq</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">earlierEqed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#next_occ</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">next_occ</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#next_occ</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">next_occs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#next_occ</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">next_occed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#poss</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">poss</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#poss</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">posses</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#poss</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">possed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#precedes</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">precedes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#precedes</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">precedeses</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#precedes</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">precedesed</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

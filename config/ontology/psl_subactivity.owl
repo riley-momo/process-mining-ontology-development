@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ontohub.org/psl/subactivity"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://ontohub.org/psl/subactivity">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://ontohub.org/psl/psl_core</Import>
+    <Declaration>
+        <Class IRI="#Primitive"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#proper_subactivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#subactivity"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Primitive"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://ontohub.org/psl/psl_core#Activity"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectInverseOf>
+                        <ObjectProperty IRI="#proper_subactivity"/>
+                    </ObjectInverseOf>
+                    <Class IRI="http://ontohub.org/psl/psl_core#Activity"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Primitive"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#OccurrenceOrObject"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Timepoint"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#proper_subactivity"/>
+        <ObjectProperty IRI="#subactivity"/>
+    </SubObjectPropertyOf>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#subactivity"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#subactivity"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#subactivity"/>
+        <Class IRI="http://ontohub.org/psl/psl_core#Activity"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>http://ontohub.org/psl/psl_core#Activity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>http://ontohub.org/psl/psl_core#OccurrenceOrObject</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">OccurrenceOrObjects</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>http://ontohub.org/psl/psl_core#OccurrenceOrObject</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">OccurrenceOrObject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>http://ontohub.org/psl/psl_core#Timepoint</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Timepoints</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>http://ontohub.org/psl/psl_core#Timepoint</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Timepoint</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+        <IRI>#Primitive</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Primitives</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+        <IRI>#Primitive</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Primitive</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#proper_subactivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">proper_subactivity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#proper_subactivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">proper_subactivities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#proper_subactivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">proper_subactivitied</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+        <IRI>#subactivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subactivity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+        <IRI>#subactivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subactivities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+        <IRI>#subactivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">subactivitied</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

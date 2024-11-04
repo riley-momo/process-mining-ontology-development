@@ -3,3 +3,5 @@ jupyterlab
 pm4py
 kglab
 yatter
+pytholog
+owlready2
